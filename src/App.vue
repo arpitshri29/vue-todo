@@ -1,7 +1,6 @@
 <template>
   <div>
-    Todo App
-    <Todos/>
+    <Todos v-bind:todos="todos"/>
   </div>
 </template>
 

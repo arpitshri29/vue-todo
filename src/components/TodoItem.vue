@@ -2,6 +2,9 @@
     <div class="todo-item" v-bind:class="{'done':todo.completed}">
         <input type="checkbox" class="mr-5" v-on:change="taskDone">
         {{todo.title}}
+        <button v-on:click="$emit('delete-todo', todo.id)"  class="delete">
+            <img src="../assets/delete.png" alt="Delete">
+        </button>
     </div>
 </template>
 
@@ -11,7 +14,9 @@
         props:['todo'],
         methods:{
             taskDone(){
-                console.log('Task completed!');
+                let check = this.todo;
+                check.completed = !check.completed;
+                console.log('clicked: ', check.completed)
             }
         }
     }
@@ -28,6 +33,15 @@
 
     .mr-5{
         margin-right: 5px;
+    }
+
+    .delete{
+        float: right;
+        border: none;
+    }
+
+    .delete img{
+        height: 18px;
     }
 
     .done{

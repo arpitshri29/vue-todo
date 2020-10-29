@@ -1,5 +1,7 @@
 # vue-todo
 
+[Demo](https://todo-vue-arp.netlify.app/) of the app.
+
 ## Project setup
 ```
 npm install
